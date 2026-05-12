@@ -4,6 +4,9 @@ import { FaHome } from "react-icons/fa";
 import Grid from "@/components/Grid";
 import MyProject from "@/components/MyProject";
 import Clients from "@/components/Client";
+import { CanvasRevealEffectDemo } from "@/components/CanvasRevealEffectDemo";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <main>
@@ -19,6 +22,8 @@ export default function Home() {
       <Grid />
       <MyProject />
       <Clients />
+      <CanvasRevealEffectDemo />
+      <Footer />
     </main>
   );
 }

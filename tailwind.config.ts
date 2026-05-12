@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import miniSvgDataUri from "mini-svg-data-uri";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
-const config = {
+const config: any = {
     darkMode: ["class", ".dark"],
     content: [
         "./pages/**/*.{ts,tsx}",

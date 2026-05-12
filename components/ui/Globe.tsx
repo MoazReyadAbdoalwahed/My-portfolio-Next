@@ -73,6 +73,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     | null
   >(null);
 
+
   const globeRef = useRef<ThreeGlobe | null>(null);
 
   const defaultProps = {
@@ -81,7 +82,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     showAtmosphere: true,
     atmosphereAltitude: 0.1,
     polygonColor: "rgba(255,255,255,0.7)",
-    globeColor: "#1d072e",
+    globeColor: "#00f2ff",
     emissive: "#000000",
     emissiveIntensity: 0.1,
     shininess: 0.9,
@@ -180,7 +181,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .pointsData(data)
       .pointColor(((d: unknown) => {
         return (d as { color?: string } | undefined)?.color ?? "";
-      }) as unknown as any)
+      }) as unknown as (d: unknown) => string)
       .pointsMerge(true)
       .pointAltitude(0.0)
       .pointRadius(2);

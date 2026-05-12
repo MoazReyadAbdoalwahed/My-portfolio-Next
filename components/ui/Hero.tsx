@@ -5,9 +5,8 @@ import { Spotlight } from './Spotlight'
 import Magicbutton from './Magicbutton'
 import { FaLocationArrow } from 'react-icons/fa'
 import { motion } from 'framer-motion'
-
+import { FaDownload } from 'react-icons/fa6';
 const Hero = () => {
-    // Animation settings: starts 20px below and invisible, then slides up and fades in
     const fadeInUp = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -15,7 +14,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="bg-black-100 relative flex min-h-screen w-full overflow-hidden flex-col items-center justify-center">
+        <div className="bg-black-100 relative flex min-h-[70vh] md:min-h-screen w-full overflow-hidden flex-col items-center justify-center">
             {/* Background Effects */}
             <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20" fill="#CBACF9" />
             <Spotlight className="-top-40 left-1/2 md:-top-20 md:left-60" fill="#E4ECFF" />
@@ -57,9 +56,23 @@ const Hero = () => {
                     variants={fadeInUp}
                     transition={{ delay: 0.6 }}
                 >
-                    <a className="relative z-10 mt-8 block" href='#about'>
+                    {/* <a className="relative z-10 mt-8 block" href='#about'>
                         <Magicbutton title='see my work' icon={<FaLocationArrow />} />
-                    </a>
+                    </a> */}
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-10">
+                        <a href="#projects">
+                            <Magicbutton
+                                title="See my work"
+                                icon={<FaLocationArrow />}
+                            />
+                        </a>
+
+                        <a href="/Moaz_Reyad_CV.pdf" download="Moaz_Resume">                            <Magicbutton
+                            title="Download CV"
+                            icon={<FaDownload />} // تأكد من عمل import لـ FaDownload من react-icons/fa6
+                        />
+                        </a>
+                    </div>
                 </motion.div>
             </motion.div>
         </div>

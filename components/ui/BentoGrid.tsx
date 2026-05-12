@@ -71,7 +71,7 @@ export const BentoGridItem = ({
 
     const handleCopy = () => {
         // لا تنسَ تغيير هذا الإيميل لإيميلك الحقيقي
-        const text = "moaz.riyad.dev@email.com";
+        const text = "abdoalwahedmoaz@gmail.com";
         navigator.clipboard.writeText(text);
         setCopied(true);
     };
@@ -79,10 +79,7 @@ export const BentoGridItem = ({
     return (
         <div
             className={cn(
-                // --- التغييرات الأساسية في التصميم ---
-                // 1. تقليل انحناء الحواف (rounded-xl بدلاً من 3xl)
-                // 2. استخدام خلفية داكنة جديدة (bg-[#0a0f1e])
-                // 3. إضافة حافة متوهجة Cyan (border-cyan-800/30)
+
                 "row-span-1 relative overflow-hidden rounded-xl border border-cyan-800/30 group/bento hover:border-cyan-500/80 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition duration-500 bg-[#0a0f1e] justify-between flex flex-col space-y-4",
                 className
             )}
@@ -110,19 +107,15 @@ export const BentoGridItem = ({
                     )}
                 </div>
                 {id === 6 && (
-                    // --- تغيير الحركة الخلفية ---
-                    // استخدام Spotlight بدلاً من الرسوم المتحركة المعقدة
                     <Spotlight className="-top-10 left-0 md:left-20 md:-top-20" fill="cyan" />
                 )}
 
                 <div
                     className={cn(
                         titleClassName,
-                        // تغيير الحركات الجانبية لتكون أكثر بساطة
                         "relative md:h-full min-h-40 flex flex-col px-6 p-6 lg:p-10 z-20"
                     )}
                 >
-                    {/* تغيير تنسيق النصوص والألوان */}
                     <div className="font-mono font-normal md:text-xs lg:text-sm text-sm text-cyan-300 z-10 tracking-wider">
                         {description}
                     </div>
@@ -134,9 +127,7 @@ export const BentoGridItem = ({
 
                     {id === 2 && <GridGlobe />}
 
-                    {/* --- إعادة تصميم الـ Tech Stack list --- */}
                     {id === 3 && (
-                        // عرض العناصر بشكل أفقي (Row) في الأسفل بدلاً من الأعمدة الجانبية
                         <div className="flex gap-2 w-full mt-auto mb-2 flex-wrap justify-center md:justify-start">
                             {leftLists.map((item, i) => (
                                 <span
@@ -166,13 +157,10 @@ export const BentoGridItem = ({
                                 <Lottie options={defaultOptions} height={200} width={400} />
                             </div>
 
-                            {/* --- تصميم زر مختلف تماماً --- */}
                             <MagicButton
-                                title={copied ? "Email Copied!" : "Let's Talk"}
+                                title={copied ? "Email Copied!" : "copy email"}
                                 icon={<IoCopyOutline />}
                                 handleClick={handleCopy}
-                                // زر بحدود Cyan وخلفية شفافة (Neon outline style)
-                                otherClasses="!bg-transparent border border-cyan-400 !text-cyan-400 hover:!bg-cyan-900/30 hover:shadow-[0_0_10px_rgba(6,182,212,0.3)] rounded-lg font-mono tracking-wider transition-all duration-300"
                             />
                         </div>
                     )}
